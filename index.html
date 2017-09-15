@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="chortlePortal">
   <head>
-    <meta name=“viewport” content=“width=500, initial-scale="1"/>
+    <meta name="viewport" content="width=500, initial-scale=1"/>
     <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
     <title>ChortlePortal</title>
@@ -14,14 +14,22 @@
       <div class="login">
         <h3>Chortle Portal</h3>
         <a href="./main.html" class="mainLink">
-          <button type="button" name="login" class="loginButton">
+          <button type="button" name="login" class="loginButton">goto main.html
           </button>
         </a>
       </div>
+        <!-- <application></application> -->
     </main>
-    <script src=“https://code.jquery.com/jquery-3.2.1.js”
-    integrity=“sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=”
-    crossorigin=“anonymous”></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="container/application/application.component.js"></script>
+    <script type="text/javascript" src="container/currentchortle/currentchortle.component.js"></script>
+    <script type="text/javascript" src="container/map/map.component.js"></script>
+    <script type="text/javascript" src="container/menu/menu.component.js"></script>
+    <script type="text/javascript" src="container/newchortle/newchortle.component.js"></script>
   </body>
 </html>
