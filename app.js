@@ -1,1 +1,7 @@
-console.log('working');
+(function (){
+  'use strict';
+
+  angular
+  .module('chortlePortal',[])
+  
+})()
