@@ -1,2 +1,10 @@
-<currentchortle></currentchortle>
-<newchortle></newchortle>
+<currentchortle
+  entries = "$ctrl.chortles"
+></currentchortle>
+<button type="button" name="button"
+  ng-click = "$ctrl.toggleform($ctrl.defaultvalue)">
+form</button>
+<newchortle
+  newentries = "$ctrl.chortles"
+  ng-hide = "$ctrl.defaultvalue.view"
+></newchortle>
