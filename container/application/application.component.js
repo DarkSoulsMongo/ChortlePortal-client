@@ -6,8 +6,15 @@
 
       controller: function() {
         const vm = this
+        // console.log(vm)
         vm.$onInit = function(){
-        console.log('application.component.js working')
+           vm.data = angular.fromJson(json)
+           vm.formstatus = {
+             view: true
+           }
+          //vm.chortles = data
+          // console.log(vm.data)
+        // console.log('application.component.js working')
       }
     },
     templateUrl:'container/application/application.html'

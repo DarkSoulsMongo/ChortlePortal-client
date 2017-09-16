@@ -3,10 +3,14 @@
   angular
     .module('chortlePortal')
     .component('newchortle', {
-
+      bindings: {
+        newentries: '<',
+        formview: '<',
+        showform: '<'
+      },
       controller: function() {
         const vm = this
-        console.log('newchortle.component.js working')
+        
     },
     templateUrl:'container/newchortle/newchortle.html'
   })
