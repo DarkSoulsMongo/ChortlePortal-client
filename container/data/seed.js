@@ -3,12 +3,14 @@ const json = [
     "id": 1,
     "comment": "where is mike? we miss him sooooo",
     "image": "https://edanwebster.files.wordpress.com/2013/05/hangover-cat.jpg",
-    "selected": true
+    "selected": true,
+    "location": [39.729040, -104.987258]
   },
   {
     "id": 2,
     "comment": "Mike found a friend",
-    "image": "https://i.pinimg.com/736x/21/74/8c/21748c1cc0de9df09715de622bfdfbf3.jpg"
+    "image": "https://i.pinimg.com/736x/21/74/8c/21748c1cc0de9df09715de622bfdfbf3.jpg",
+    "location": [39.728569, -104.986035]
   },
   {
     "id": 3,
