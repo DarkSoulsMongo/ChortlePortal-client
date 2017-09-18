@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="chortlePortal">
   <head>
-    <meta name="viewport" content="width=500, initial-scale=1"/>
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <title>ChortlePortal</title>
   </head>
   <body>
     <header>
-
+      <nav class="nav">
+        <h3>Chortle Portal</h3>
+        <img class="navIcon" src="./favicon.ico" alt="">
+      </nav>
     </header>
     <main>
-      <div class="login">
-        <h3>Chortle Portal</h3>
-        <a href="./main.html" class="mainLink">
-          <button type="button" name="login" class="loginButton">goto main.html
-          </button>
-        </a>
-      </div>
-        <!-- <application></application> -->
+
+        <div class="login">
+          <h1>Login</h1>
+        </div>
+          <form class="login-form container">
+            <div class=>
+              <div class="row">
+                <div class="twelve columns">
+                  <label for="email">Email</label>
+                  <input class="u-full-width" type="email" placeholder="test@mailbox.com">
+                </div>
+              </div>
+              <div class="row">
+                <div class="twelve columns">
+                  <label for="password">Password</label>
+                  <input class="u-full-width" type="email" placeholder="password">
+                </div>
+              </div>
+              <a href="./main.html" class="mainLink">
+                <button type="button" name="login" class="loginButton">Submit</button>
+              </a>
+              <button type="button" name="register" class="register">Register</button>
+            </div>
+          </form>
+        </div>
     </main>
+      <footer class="nav">
+        © 2017 Copyright DarkSouls
+      </footer>
+
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script> -->
