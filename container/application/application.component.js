@@ -8,7 +8,10 @@
         const vm = this
         // console.log(vm)
         vm.$onInit = function(){
-           vm.data = angular.fromJson(json)
+          const url = 'https://salty-mountain-21631.herokuapp.com/';
+          $http.get(url).then(function(data) {
+            vm.data = data.data;
+          })
            vm.formstatus = {
              view: true
            }
