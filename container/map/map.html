@@ -8,17 +8,32 @@
     </style>
     <div id='map' style='width: 400px; height: 300px;'></div>
       <script>
+
+
+
       mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
       var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/dark-v9',
       center: [-104.987258, 39.729040], // starting position -104.99, 39.73
-      zoom: 14 // starting zoom
+      zoom: 14, // starting zoom
     });
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
     map.on('load', function () {
+      var coordinates = [];
+      function updateUserLoc() {
+        let userLocation = navigator.geolocation.getCurrentPosition(function(position){
+          coordinates[0] = position.coords.latitude;
+          coordinates[1] = position.coords.longitude;
+          console.log(coordinates[0], coordinates[1]);
+          map.jumpTo({ 'center': [coordinates[1],coordinates[0]], 'zoom': 14 });
+
+        })
+
+      }
+setInterval(updateUserLoc, 1000);
       map.addLayer({
         "id": "places",
         "type": "symbol",
@@ -54,6 +69,7 @@
            "icon-allow-overlap": true
             }
         })
+
         // When a click event occurs on a feature in the places layer, open a popup at the
         // location of the feature, with description HTML from its properties.
         map.on('click', 'places', function (e) {
