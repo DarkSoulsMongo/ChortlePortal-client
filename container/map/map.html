@@ -3,7 +3,6 @@
     <img class="logo" src="assets/ChortlePortal-logo.png" alt="">
   </nav>
     <div class="userMap">
-
       <div class="row">
         <div class="twelve columns">
         <style>
@@ -18,7 +17,7 @@
           var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/mapbox/dark-v9',
-            center: [-104.987258, 39.729040], // starting position -104.99, 39.73
+            center: [-105.0072288, 39.7577643], // starting position -104.99, 39.73
             zoom: 14 // starting zoom
           });
 
@@ -26,19 +25,24 @@
         map.addControl(new mapboxgl.NavigationControl());
 
 
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    }));
+
     map.on('load', function () {
       var coordinates = [];
+      //updates user location
       function updateUserLoc() {
         let userLocation = navigator.geolocation.getCurrentPosition(function(position){
-          coordinates[0] = position.coords.latitude;
-          coordinates[1] = position.coords.longitude;
-          console.log(coordinates[0], coordinates[1]);
-          map.jumpTo({ 'center': [coordinates[1],coordinates[0]], 'zoom': 14 });
-
+          coordinates[0] = position.coords.longitude;
+          coordinates[1] = position.coords.latitude;
+          map.jumpTo({ 'center': [coordinates[0],coordinates[1]], 'zoom': 14 });
         })
-
       }
-setInterval(updateUserLoc, 1000);
+
       map.addLayer({
         "id": "places",
         "type": "symbol",
