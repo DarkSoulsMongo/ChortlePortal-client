@@ -432,7 +432,6 @@ button {
 
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 25px;
@@ -440,4 +439,47 @@ footer {
   display: flex;
   justify-content: center;
   font-size: 15px;
+}
+
+/* map styling */
+
+#map {
+  width: 900px;
+  height: 700px;
+}
+
+.userMap {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* Media Query */
+
+@media (max-width: 399px) {
+  #map {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 699px) {
+  #map {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 799px) {
+  #map {
+    width: 700px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 899px) {
+  #map {
+    width: 800px;
+    height: 600px;
+  }
 }
