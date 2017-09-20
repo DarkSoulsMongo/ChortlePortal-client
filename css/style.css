@@ -457,30 +457,31 @@ footer {
 
 /* Media Query */
 
-@media (max-width: 399px) {
+@media (min-width: 400px) {
   #map {
-    width: 380px;
-    height: 380px;
+    height: 375px;
+    width: 375px;
   }
 }
 
-@media (max-width: 699px) {
+@media (min-width: 600px) {
   #map {
-    width: 600px;
-    height: 400px;
+    height: 475px;
+    width: 575px;
   }
 }
 
-@media (max-width: 799px) {
+
+@media (min-width: 800px) {
   #map {
-    width: 700px;
     height: 500px;
+    width: 750px;
   }
 }
 
-@media (max-width: 899px) {
+@media (min-width: 1000px) {
   #map {
-    width: 800px;
-    height: 600px;
+    height: 500px;
+    width: 950px;
   }
 }
