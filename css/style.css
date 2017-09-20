@@ -420,6 +420,13 @@ h1 {
 button {
   background-color: #272635;
   color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.addButton {
+  text-align: center;
 }
 
 .footer {
