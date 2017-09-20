@@ -22,7 +22,7 @@
           });
 
     // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.NavigationControl());
 
 
     map.addControl(new mapboxgl.GeolocateControl({
@@ -59,16 +59,25 @@
                     "geometry": {
                         "type": "Point",
                         "coordinates": [-104.987258, 39.729040]
-
                     }
+                  }, {
+                    "type": "Feature",
+                    "properties": {
+                      "description":"comment 2",
+                      "icon": "theatre"
                   },
-                  "layout": {
-                    "icon-image": "{icon}-15",
-                    "icon-allow-overlap": true
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-104.986035, 39.728569]
                   }
-
-                })
-
+                }]
+              }
+            },
+            "layout": {
+           "icon-image": "{icon}-15",
+           "icon-allow-overlap": true
+            }
+        })
         // When a click event occurs on a feature in the places layer, open a popup at the
         // location of the feature, with description HTML from its properties.
           map.on('click', 'places', function (e) {
@@ -86,7 +95,6 @@
             map.getCanvas().style.cursor = '';
           });
         });
-      </script>
     </script>
     </div>
     </div>
