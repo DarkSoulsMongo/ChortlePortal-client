@@ -11,8 +11,9 @@
       controller: function() {
         const vm = this
 
-        vm.getposition = function(data){
+        vm.getposition = function(data, comment){
           //console.log(navigator.geolocation)
+          console.log(comment)
           navigator.geolocation.getCurrentPosition(function(location){
             console.log(location.coords.latitude)
             console.log(location.coords.longitude)

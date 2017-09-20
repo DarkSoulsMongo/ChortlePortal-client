@@ -1,12 +1,12 @@
 <a href="https://placeholder.com"><img src="http://via.placeholder.com/275x275"></a>
 
 <form class="newform" action="index.html" method="post">
-  <label for="chortle-form">new chortle</label>
-  <input type="text" class="chortle-form" name="" value="">
+  <label for="comment">new chortle</label>
+  <input ng-model="comment" type="text" class="chortle-form" name="" value="">
 </form>
 
 <button type="button" name="button"
- ng-click="$ctrl.getposition($ctrl.newentries)"
+ ng-click="$ctrl.getposition($ctrl.newentries, comment)"
 >Post</button>
 <button type="button" name="button">Edit</button>
 <button type="button" name="button">Delete</button>
