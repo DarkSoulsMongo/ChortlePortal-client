@@ -103,6 +103,12 @@
     </div>
     </div>
     </div>
+
+    <div class="addButton">
+      <button class="addButton" type="button" name="button"
+        ng-click = "$ctrl.toggleform($ctrl.defaultvalue)">+
+      </button>
+    </div>
     <footer class="footer">
       <p class="footerText">© 2017 DarkSouls</p>
     </footer>
@@ -110,9 +116,7 @@
       newentries = "$ctrl.chortles"
       ng-hide = "$ctrl.defaultvalue.view"
     ></newchortle>
-    <button id="addButton" type="button" name="button"
-      ng-click = "$ctrl.toggleform($ctrl.defaultvalue)"><i class="fa fa-plus-circle" aria-hidden="true"></i>
-    </button>
+
     <currentchortle
       entries = "$ctrl.chortles"
     ></currentchortle>
