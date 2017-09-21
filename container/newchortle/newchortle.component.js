@@ -9,7 +9,7 @@
         showform: '<'
         // sendinfo: '<'
       },
-      controller: function() {
+      controller: function($http) {
         const vm = this
 
         vm.sendinfo = function(data, comment, file, username){
@@ -26,6 +26,12 @@
                 userLatitude : latitude
                 }
                 console.log(body)
+                const url = 'https://salty-mountain-21631.herokuapp.com'
+                $http.post(url + '/addchortle', JSON.stringify(body))
+                .then(function(response) {
+                  data.push(response.data)
+                  console.log(response.data);
+                })
             }
           })
         }
