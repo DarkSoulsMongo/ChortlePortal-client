@@ -12,8 +12,9 @@
       controller: function($http) {
         const vm = this
 
-        vm.sendinfo = function(data, comment, file, username){
+        vm.sendinfo = function(data, comment, file, username, formview){
           //console.log(navigator.geolocation)
+          formview.view = true
           navigator.geolocation.getCurrentPosition(function(location){
             const latitude = location.coords.latitude
             const longitude = location.coords.longitude
