@@ -453,8 +453,25 @@ footer {
 
 /* new chortle */
 
+.newChortleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.PEDbuttons {
+  display: flex;
+  justify-content: center;
+}
+
 .newform {
-  
+  display
+}
+
+#addButton {
+  display: flex;
+  justify-content: center;
+  width: 20px;
 }
 
 /* map styling */
@@ -471,6 +488,14 @@ footer {
 }
 
 /* Media Query */
+
+@media (min-width: 310px) {
+  #map {
+    height: 300px;
+    width: 300px;
+  }
+}
+
 
 @media (min-width: 400px) {
   #map {
@@ -499,11 +524,4 @@ footer {
     height: 500px;
     width: 950px;
   }
-}
-
-#addButton {
-  display: flex;
-  justify-content: center;
-  width: 20px;
-
 }
