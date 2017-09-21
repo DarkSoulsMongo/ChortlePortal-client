@@ -2,7 +2,7 @@
   <nav class="nav">
     <img class="logo" src="assets/ChortlePortal-logo.png" alt="">
   </nav>
-    <div class="userMap">
+    <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
       <div class="row">
         <div class="twelve columns">
         <style>
@@ -103,6 +103,10 @@
     </div>
     </div>
     </div>
+    <newchortle
+      newentries = "$ctrl.chortles"
+      ng-hide = "$ctrl.defaultvalue.view"
+    ></newchortle>
 
     <div class="addButton">
       <button class="addButton" type="button" name="button"
@@ -112,10 +116,6 @@
     <footer class="footer">
       <p class="footerText">© 2017 DarkSouls</p>
     </footer>
-    <newchortle
-      newentries = "$ctrl.chortles"
-      ng-hide = "$ctrl.defaultvalue.view"
-    ></newchortle>
 
     <currentchortle
       entries = "$ctrl.chortles"
