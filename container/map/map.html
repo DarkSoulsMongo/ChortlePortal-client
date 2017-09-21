@@ -13,8 +13,19 @@
         </style>
         <div id='map'></div>
         <script>
+        let image = [];
+        let user = [];
+        let comment = [];
+
           $(document).ready(function(){
             document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
+          })
+
+          $.get('https://salty-mountain-21631.herokuapp.com/', function(data){
+            for(i = 0; i < data.length; i++){
+                console.log(data[i].image);
+                user.push(data[i].username)
+            }
           })
 
           mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
@@ -30,23 +41,14 @@
 
 
     map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    }));
+      positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      }
+    ));
 
     map.on('load', function () {
-      var coordinates = [];
-      //updates user location
-      function updateUserLoc() {
-        let userLocation = navigator.geolocation.getCurrentPosition(function(position){
-          coordinates[0] = position.coords.longitude;
-          coordinates[1] = position.coords.latitude;
-          map.jumpTo({ 'center': [coordinates[0],coordinates[1]], 'zoom': 14 });
-        })
-      }
-
       map.addLayer({
         "id": "places",
         "type": "symbol",
