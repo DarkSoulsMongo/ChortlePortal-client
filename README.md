@@ -7,7 +7,7 @@
 [Connor Alcock](https://github.com/connoralcock87)<br>
 [Logan Crewss](https://github.com/lcrewss)
 
-## Firebase & Database URL
+## Firebase & Heroku URL
 [Firebase](https://chortle-portal.firebaseapp.com/main.html) 
 
 [Database](https://salty-mountain-21631.herokuapp.com/)
