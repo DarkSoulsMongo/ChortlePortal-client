@@ -7,11 +7,17 @@
 [Connor Alcock](https://github.com/connoralcock87)<br>
 [Logan Crewss](https://github.com/lcrewss)
 
+## Firebase & Database URL
+[Firebase](https://chortle-portal.firebaseapp.com/main.html) 
+
+[Database](https://salty-mountain-21631.herokuapp.com/)
+
+
+
 # About: 
 We wanted to make an app that brings joy and laughter to friends in the area. Our app will allow you to drop a "Chortle"(image or text) to your current location on the map. As your friends and family approach the geolocation of your Chortle, they will have access to view your Chortle. 
 
 # Technologies We Used: 
-
 ![mongodb](https://user-images.githubusercontent.com/26422332/30713608-0e77e44a-9ecd-11e7-9935-64fcdc70a049.png)
 ![mapbox](https://user-images.githubusercontent.com/26422332/30713609-0e787c34-9ecd-11e7-9d17-1688acbb42a2.png)
 ![javascript](https://user-images.githubusercontent.com/26422332/30713613-0e86f566-9ecd-11e7-9e74-e64cfe9765f7.jpg)
