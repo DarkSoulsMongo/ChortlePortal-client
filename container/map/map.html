@@ -38,13 +38,11 @@
             }
             for(let i = 0; i < latitudes.length; i++){
                 //push geojson features into array geoJsonArray
-                let placeholderImageURL = 'https://www.askideas.com/wp-content/uploads/2016/11/Funny-Stupid-Man-Picture.jpg';
-
                 geoJsonArray.push(
                   {
                     "type": "Feature",
                     "properties": {
-                      "description": "<a href='" + placeholderImageURL + "'><img class='poupImage' src='" + placeholderImageURL + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i],
+                      "description": "<a href='" + images[i] + "'><img class='poupImage' src='" + images[i] + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i],
                       "icon": "star",
                     },
                     "geometry": {
