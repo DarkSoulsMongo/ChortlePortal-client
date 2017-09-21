@@ -451,21 +451,42 @@ footer {
   font-size: 15px;
 }
 
+.usericon {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
 /* new chortle */
 
 .newChortleContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
+
 }
 
-.PEDbuttons {
+.placeholder-img {
   display: flex;
   justify-content: center;
 }
 
+.PEDbuttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: space-around;
+
+}
+
 .newform {
-  display
+  display: flex;
+  flex-direction: column;
+
 }
 
 #addButton {
@@ -484,7 +505,7 @@ footer {
 .userMap {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 /* Media Query */

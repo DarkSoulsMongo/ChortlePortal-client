@@ -1,10 +1,16 @@
+<!-- <div class="usericon">
+  <img src="./assets/user_icon.png" height="40px" width="40px" alt="">
+</div> -->
+
 <div class="newChortleContainer">
-  <a href="https://placeholder.com"><img src="http://via.placeholder.com/275x275"></a>
+  <div class="placeholder-img">
+    <a href="https://placeholder.com"><img src="http://via.placeholder.com/250x250"></a>
+  </div>
 
   <form class="newform" action="index.html" method="post">
-    <label for="username">User Name</label>
-    <input ng-model="username" type="text" name="" value="">
-    <label for="comment">New Chortle</label>
+    <!-- <label for="username">Name</label>
+    <input ng-model="username" type="text" name="" value=""> -->
+    <label for="comment">Chortle Comment</label>
     <input ng-model="comment" type="text" class="chortle-form" name="" value="">
     <label for="file">Choose an image to upload</label>
     <input fileread="$ctrl.file" id="capture" type="file" accept="image/*;capture=camera">
@@ -14,14 +20,7 @@
     <button type="button" name="button"
     ng-click="$ctrl.sendinfo($ctrl.newentries, comment, $ctrl.file, username, $ctrl.formview)"
     >Post</button>
-    <button type="button" name="button">Edit</button>
-    <button type="button" name="button">Delete</button>
+    <!-- <button type="button" name="button">Edit</button> -->
+    <button type="button" name="button">Trash</button>
   </div>
-</div>
-
-<div class="">
-  <span>
-    <p></p>
-    <img src="" alt="">
-  </span>
 </div>

@@ -1,121 +1,126 @@
   <nav class="nav">
     <img class="logo" src="assets/ChortlePortal-logo.png" alt="">
   </nav>
-    <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
-      <div class="row">
-        <div class="twelve columns">
-        <style>
-          .mapboxgl-popup {
-            max-width: 400px;
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-          }
-        </style>
-        <div id='map'></div>
-        <script>
-          $(document).ready(function(){
-            document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
-          })
 
-          mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
-          var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/dark-v9',
-            center: [-105.0072288, 39.7577643], // starting position -104.99, 39.73
-            zoom: 14 // starting zoom
-          });
+  <div class="usericon">
+    <img src="./assets/user_icon.png" height="40px" width="40px" alt="">
+  </div>
 
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
-
-
-    map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    }));
-
-    map.on('load', function () {
-      var coordinates = [];
-      //updates user location
-      function updateUserLoc() {
-        let userLocation = navigator.geolocation.getCurrentPosition(function(position){
-          coordinates[0] = position.coords.longitude;
-          coordinates[1] = position.coords.latitude;
-          map.jumpTo({ 'center': [coordinates[0],coordinates[1]], 'zoom': 14 });
+  <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
+    <div class="row">
+      <div class="twelve columns">
+      <style>
+        .mapboxgl-popup {
+          max-width: 400px;
+          font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        }
+      </style>
+      <div id='map'></div>
+      <script>
+        $(document).ready(function(){
+          document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
         })
-      }
 
-      map.addLayer({
-        "id": "places",
-        "type": "symbol",
-        "source": {
-            "type": "geojson",
-            "data": {
-                "type": "FeatureCollection",
-                "features": [{
-                    "type": "Feature",
-                    "properties": {
-                      "description": "{{chortles[0].comment}}",
-                      "icon": "theatre"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-104.987258, 39.729040]
-                    }
-                  }, {
-                    "type": "Feature",
-                    "properties": {
-                      "description":"comment 2",
-                      "icon": "theatre"
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
+        var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/mapbox/dark-v9',
+          center: [-105.0072288, 39.7577643], // starting position -104.99, 39.73
+          zoom: 14 // starting zoom
+        });
+
+  // Add zoom and rotation controls to the map.
+  map.addControl(new mapboxgl.NavigationControl());
+
+
+  map.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+      enableHighAccuracy: true
+  },
+  trackUserLocation: true
+  }));
+
+  map.on('load', function () {
+    var coordinates = [];
+    //updates user location
+    function updateUserLoc() {
+      let userLocation = navigator.geolocation.getCurrentPosition(function(position){
+        coordinates[0] = position.coords.longitude;
+        coordinates[1] = position.coords.latitude;
+        map.jumpTo({ 'center': [coordinates[0],coordinates[1]], 'zoom': 14 });
+      })
+    }
+
+    map.addLayer({
+      "id": "places",
+      "type": "symbol",
+      "source": {
+          "type": "geojson",
+          "data": {
+              "type": "FeatureCollection",
+              "features": [{
+                  "type": "Feature",
+                  "properties": {
+                    "description": "{{chortles[0].comment}}",
+                    "icon": "theatre"
                   },
                   "geometry": {
-                    "type": "Point",
-                    "coordinates": [-104.986035, 39.728569]
+                      "type": "Point",
+                      "coordinates": [-104.987258, 39.729040]
                   }
-                }]
-              }
-            },
-            "layout": {
-           "icon-image": "{icon}-15",
-           "icon-allow-overlap": true
+                }, {
+                  "type": "Feature",
+                  "properties": {
+                    "description":"comment 2",
+                    "icon": "theatre"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [-104.986035, 39.728569]
+                }
+              }]
             }
-        })
-        // When a click event occurs on a feature in the places layer, open a popup at the
-        // location of the feature, with description HTML from its properties.
-          map.on('click', 'places', function (e) {
-              new mapboxgl.Popup()
-                  .setLngLat(e.features[0].geometry.coordinates)
-                  .setHTML(e.features[0].properties.description)
-                  .addTo(map);
-                });
-        // Change the cursor to a pointer when the mouse is over the places layer.
-          map.on('mouseenter', 'places', function () {
-              map.getCanvas().style.cursor = 'pointer';
-            });
-        // Change it back to a pointer when it leaves.
-          map.on('mouseleave', 'places', function () {
-            map.getCanvas().style.cursor = '';
+          },
+          "layout": {
+         "icon-image": "{icon}-15",
+         "icon-allow-overlap": true
+          }
+      })
+      // When a click event occurs on a feature in the places layer, open a popup at the
+      // location of the feature, with description HTML from its properties.
+        map.on('click', 'places', function (e) {
+            new mapboxgl.Popup()
+                .setLngLat(e.features[0].geometry.coordinates)
+                .setHTML(e.features[0].properties.description)
+                .addTo(map);
+              });
+      // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', 'places', function () {
+            map.getCanvas().style.cursor = 'pointer';
           });
+      // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'places', function () {
+          map.getCanvas().style.cursor = '';
         });
-    </script>
-    </div>
-    </div>
-    </div>
-    <newchortle
-      newentries = "$ctrl.chortles"
-      sendinfo = "$ctrl.senddata"
-      formview = "$ctrl.defaultvalue"
-      ng-hide = "$ctrl.defaultvalue.view"
-    ></newchortle>
+      });
+  </script>
+  </div>
+  </div>
+  </div>
+  <newchortle
+    newentries = "$ctrl.chortles"
+    sendinfo = "$ctrl.senddata"
+    formview = "$ctrl.defaultvalue"
+    ng-hide = "$ctrl.defaultvalue.view"
+  ></newchortle>
 
-    <div class="addButton">
-      <button class="addButton" type="button" name="button"
-        ng-click = "$ctrl.toggleform($ctrl.defaultvalue)">+
-      </button>
-    </div>
+  <div class="addButton">
+    <button class="addButton" type="button" name="button"
+      ng-click = "$ctrl.toggleform($ctrl.defaultvalue)">+
+    </button>
+  </div>
 
 
-    <currentchortle
-      entries = "$ctrl.chortles"
-    ></currentchortle>
+  <currentchortle
+    entries = "$ctrl.chortles"
+  ></currentchortle>
