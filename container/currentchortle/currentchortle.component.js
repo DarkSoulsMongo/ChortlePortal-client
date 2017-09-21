@@ -8,7 +8,6 @@
       },
       controller: function() {
         const vm = this
-        console.log(vm)
     },
     templateUrl:'container/currentchortle/currentchortle.html'
   })
