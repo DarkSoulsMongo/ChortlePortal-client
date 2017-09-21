@@ -1,12 +1,16 @@
 <a href="https://placeholder.com"><img src="http://via.placeholder.com/275x275"></a>
 
 <form class="newform" action="index.html" method="post">
+  <label for="username">User Name</label>
+  <input ng-model="username" type="text" name="" value="">
   <label for="comment">new chortle</label>
   <input ng-model="comment" type="text" class="chortle-form" name="" value="">
+  <label for="file">Choose an image to upload</label>
+  <input fileread="$ctrl.file" id="capture" type="file" accept="image/*;capture=camera">
 </form>
 
 <button type="button" name="button"
- ng-click="$ctrl.getposition($ctrl.newentries, comment)"
+ ng-click="$ctrl.sendinfo($ctrl.newentries, comment, $ctrl.file, username)"
 >Post</button>
 <button type="button" name="button">Edit</button>
 <button type="button" name="button">Delete</button>
