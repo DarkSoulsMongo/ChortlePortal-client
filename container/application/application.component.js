@@ -8,7 +8,8 @@
         const vm = this
         // console.log(vm)
         vm.$onInit = function(){
-          const url = 'https://salty-mountain-21631.herokuapp.com/'
+          // const url = 'http://localhost:3000'
+          const url = 'https://salty-mountain-21631.herokuapp.com'
           //console.log(url)
           $http.get(url).then(function(data) {
             vm.data = data.data
