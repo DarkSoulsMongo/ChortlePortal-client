@@ -439,6 +439,10 @@ button {
   font-family: 'Oswald', sans-serif;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 footer {
   position: absolute;
@@ -523,12 +527,32 @@ footer {
     height: 375px;
     width: 375px;
   }
+
+  .newChortleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+  }
 }
 
 @media (min-width: 600px) {
   #map {
     height: 475px;
     width: 575px;
+  }
+
+  .newChortleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+
   }
 }
 
@@ -538,11 +562,31 @@ footer {
     height: 500px;
     width: 750px;
   }
+
+  .newChortleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 200px;
+    margin-right: 200px;
+
+  }
 }
 
 @media (min-width: 1000px) {
   #map {
     height: 500px;
     width: 950px;
+  }
+
+  .newChortleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 300px;
+    margin-right: 300px;
+
   }
 }
