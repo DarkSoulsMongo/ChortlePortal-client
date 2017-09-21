@@ -12,7 +12,7 @@
           //console.log(url)
           $http.get(url).then(function(data) {
             vm.data = data.data
-            console.log(data)
+
           })
            vm.formstatus = {
              view: true

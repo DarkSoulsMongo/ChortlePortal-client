@@ -12,10 +12,46 @@
         </style>
         <div id='map'></div>
         <script>
-          $(document).ready(function(){
-            document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
+        $(document).ready(function(){
+          document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
+        })
+        //arrays will hold results of individual properties of all chortles in http get.
+        let images = [];
+        let usernames = [];
+        let comments = [];
+        let latitudes = [];
+        let longitudes = [];
+
+        let geoJsonArray = [];
+
+          $.get('https://salty-mountain-21631.herokuapp.com/', function(data){
+            for(let i = 0; i < data.length; i++){
+                usernames.push(data[i].username);
+                images.push(data[i].image);
+                comments.push(data[i].comment);
+                longitudes.push(data[i].longitude);
+                latitudes.push(data[i].latitude);
+            }
+            for(let i = 0; i < latitudes.length; i++){
+                //push geojson features into array geoJsonArray
+                geoJsonArray.push(
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "description": "" + comments[i],
+                      "icon": "star",
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [longitudes[i], latitudes[i]]
+                    }
+                  },
+                )
+              }
           })
 
+
+console.log(geoJsonArray);
           mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
           var map = new mapboxgl.Map({
             container: 'map', // container id
@@ -29,23 +65,14 @@
 
 
     map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    }));
+      positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      }
+    ));
 
     map.on('load', function () {
-      var coordinates = [];
-      //updates user location
-      function updateUserLoc() {
-        let userLocation = navigator.geolocation.getCurrentPosition(function(position){
-          coordinates[0] = position.coords.longitude;
-          coordinates[1] = position.coords.latitude;
-          map.jumpTo({ 'center': [coordinates[0],coordinates[1]], 'zoom': 14 });
-        })
-      }
-
       map.addLayer({
         "id": "places",
         "type": "symbol",
@@ -53,32 +80,12 @@
             "type": "geojson",
             "data": {
                 "type": "FeatureCollection",
-                "features": [{
-                    "type": "Feature",
-                    "properties": {
-                      "description": "{{chortles[0].comment}}",
-                      "icon": "theatre"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-104.987258, 39.729040]
-                    }
-                  }, {
-                    "type": "Feature",
-                    "properties": {
-                      "description":"comment 2",
-                      "icon": "theatre"
-                  },
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [-104.986035, 39.728569]
-                  }
-                }]
+                "features": geoJsonArray
               }
             },
             "layout": {
-           "icon-image": "{icon}-15",
-           "icon-allow-overlap": true
+              "icon-image": "{icon}-15",
+              "icon-allow-overlap": true
             }
         })
         // When a click event occurs on a feature in the places layer, open a popup at the
@@ -88,7 +95,7 @@
                   .setLngLat(e.features[0].geometry.coordinates)
                   .setHTML(e.features[0].properties.description)
                   .addTo(map);
-                });
+          });
         // Change the cursor to a pointer when the mouse is over the places layer.
           map.on('mouseenter', 'places', function () {
               map.getCanvas().style.cursor = 'pointer';
