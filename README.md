@@ -1,11 +1,11 @@
 
 <p align="center">  
-  CHORTLE PORTLE 
+  CHORTLE PORTAL 
   <br><br> 
 </p>
 
 
-# Chortle Portle Created By: 
+# Chortle Portal Created By: 
 ##### Github Accounts Linked
 [Michael Harrington](https://github.com/mike85h)<br>
 [Dan Mickulesku](https://github.com/DMickulesku)<br>
