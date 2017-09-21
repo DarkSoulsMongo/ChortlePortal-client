@@ -17,6 +17,13 @@
            vm.formstatus = {
              view: true
            }
+           vm.postinfo = {
+             userName : 'username',
+             userComment : 'comment',
+             userImage : 'file',
+             userLongitude : 'longitude',
+             userLatitude : 'latitude'
+           }
         //   vm.chortles = data
         //   console.log(vm.data)
         // console.log('application.component.js working')

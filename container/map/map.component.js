@@ -6,7 +6,8 @@
       bindings: {
         chortles:'<',
         defaultvalue : '<',
-        showform : '<'
+        showform : '<',
+        senddata : '<'
       },
       controller: function() {
         const vm = this
