@@ -24,8 +24,7 @@ We wanted to make an app that brings joy and laughter to friends in the area. Ou
 # Technologies We Used: 
 ![mongodb](https://user-images.githubusercontent.com/26422332/30713608-0e77e44a-9ecd-11e7-9935-64fcdc70a049.png)
 ![mapbox](https://user-images.githubusercontent.com/26422332/30713609-0e787c34-9ecd-11e7-9d17-1688acbb42a2.png)
-![javascript](https://user-images.githubusercontent.com/26422332/30713613-0e86f566-9ecd-11e7-9e74-e64cfe9765f7.jpg)
-![html css](https://user-images.githubusercontent.com/26422332/30713610-0e79e6dc-9ecd-11e7-9589-d53334cc9d9e.png)
+![html5_css_javascript](https://user-images.githubusercontent.com/26422332/30752961-29034fd0-9f7b-11e7-83dd-6396bd28f23b.png)
 ![heroku](https://user-images.githubusercontent.com/26422332/30713611-0e7eecae-9ecd-11e7-86fd-4ec64d6fd88a.png)
 ![angularjs](https://user-images.githubusercontent.com/26422332/30713612-0e803c30-9ecd-11e7-9b27-f94a905ea09c.jpg)
 ![firebase](https://user-images.githubusercontent.com/26422332/30713614-0e8f5274-9ecd-11e7-87fc-78f998bd5411.png)
