@@ -3,6 +3,7 @@
   </nav>
   <div class="usericon">
     <img src="./assets/user_icon.png" height="40px" width="40px" alt="">
+    <h5>&nbsp;&nbsp;&nbsp;testy123&nbsp;&nbsp; | <a href="./index.html" style='color:black;'>&nbsp;&nbsp;Logout</a></h5>
   </div>
     <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
       <div class="row">
@@ -42,7 +43,7 @@
                   {
                     "type": "Feature",
                     "properties": {
-                      "description": "<a href='" + images[i] + "'><img class='poupImage' src='" + images[i] + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i],
+                      "description": "<a href='" + images[i] + "'><img class='poupImage' src='" + images[i] + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i] + "</br><input type='button' value='Edit'></button>" + "<input type='button' value='Delete'></button></br>",
                       "icon": "star",
                     },
                     "geometry": {
@@ -99,7 +100,7 @@
         // When a click event occurs on a feature in the places layer, open a popup at the
         // location of the feature, with description HTML from its properties.
           map.on('click', 'places', function (e) {
-              new mapboxgl.Popup()
+              new mapboxgl.Popup({closeOnClick: true})
                   .setLngLat(e.features[0].geometry.coordinates)
                   .setHTML(e.features[0].properties.description)
                   .addTo(map);
