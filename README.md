@@ -5,7 +5,8 @@
 </p>
 
 # About: 
-We wanted to make an app that brings joy and laughter to friends in the area. Our app will allow you to drop a "Chortle"(image or text) to your current location on the map. As your friends and family approach the geolocation of your Chortle, they will have access to view your Chortle. 
+We wanted to make an app that brings joy and laughter to friends & family in the area. Chortle Portal connects users in a non-traditional way to the world outside of their phones.
+Our app will allow you to drop a "Chortle"(image or text) to your current location on the map. As your friends and family approach the geolocation of your Chortle, they will have access to your funny Chortle moment.
 
 # Chortle Portal Created By: 
 ##### Github Accounts Linked
