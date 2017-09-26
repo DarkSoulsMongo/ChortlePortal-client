@@ -1,4 +1,6 @@
-<h1 align="center">  
+<h1 align="center">
+  <img src="assets/ChortlePortal-logo.png" width= 20% height= 20%></img>
+  <br>  
   CHORTLE PORTAL
 </h1>
 
