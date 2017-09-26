@@ -44,7 +44,7 @@ npm install
 
 ## Presentation
 
-[Presentation Slides](https://www.pivotaltracker.com/n/projects/2110435)
+[Presentation Slides](https://prezi.com/d-5dlokhfmvb/chortle-portal/)
 
 [Youtube Demonstration Video](https://www.youtube.com/watch?v=Yn5Do6cTrAI&feature=youtu.be)
 
@@ -63,7 +63,7 @@ npm install
 ![adding_chortle_screenshot](https://user-images.githubusercontent.com/26422332/30708420-1c5e67d4-9ebc-11e7-89b3-2a3a910611c7.png)
 
 ## Story Tracker
-[User Stories on Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2110435)
+[User Stories on Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2110435#)
 
 ## Mobile Viewport | iPhone 6
 **Login:**
