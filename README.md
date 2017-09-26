@@ -1,13 +1,11 @@
-
 <h1 align="center">  
   CHORTLE PORTAL
-  <br><br>
 </h1>
 
-## About:
+## About
 Chortle Portal is a light-hearted, social application that connects Users to each other and their surroundings. Unlike other social apps, Chortle Portal physically connects Users to the world outside of their phones. Instead of having to check in at an established location, Users can use Chortle Portal where ever they like. From street art to a comical pedestrian, users can take pictures, add comments and drop the content to that specific location on the map to be viewed by friends at a later time.
 
-## Created By:
+## Created By
 
 [Connor Alcock](https://github.com/connoralcock87)<br>
 [Roxanne Baldwin](https://github.com/RoxMBaldwin)<br>
@@ -22,7 +20,7 @@ Chortle Portal is a light-hearted, social application that connects Users to eac
 
 [Server Deployed URL: Heroku](https://salty-mountain-21631.herokuapp.com/)
 
-## ![github](https://code-bude.net/wp-content/uploads/2013/10/1372714624_github_circle_black.png)  Team Repositories
+## Repositories
 
 [Team: Dark Souls](https://github.com/DarkSoulsMongo)
 
@@ -33,10 +31,7 @@ Chortle Portal is a light-hearted, social application that connects Users to eac
 npm install
 ```
 
-
-
-
-# Technologies Used:
+## Technologies Used
 ![mongodb](https://user-images.githubusercontent.com/26422332/30713608-0e77e44a-9ecd-11e7-9935-64fcdc70a049.png)
 ![mapbox](https://user-images.githubusercontent.com/26422332/30713609-0e787c34-9ecd-11e7-9d17-1688acbb42a2.png)
 ![awsS3](http://i1.wp.com/www.ashtricks.com/wp-content/uploads/2016/12/s3.png?resize=200%2C200)
@@ -47,15 +42,11 @@ npm install
 ![firebase](https://developers.google.com/_static/dd8e8dc523/images/firebase/logo.png?hl=es)
 
 
-### Presentation:
+## Presentation
 
 [Presentation Slides](https://www.pivotaltracker.com/n/projects/2110435)
 
-
-### Demo Video:
-
-![isyoutube](https://www.youtube.com/watch?v=Yn5Do6cTrAI&feature=youtu.be)
-
+[Youtube Demonstration Video](https://www.youtube.com/watch?v=Yn5Do6cTrAI&feature=youtu.be)
 
 ## Wireframes
 
@@ -74,9 +65,7 @@ npm install
 ## Story Tracker
 [User Stories on Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2110435)
 
-## Mobile Viewport | iPhone 6 :
-
-
+## Mobile Viewport | iPhone 6
 **Login:**
 
 ![login](assets/login.png)
