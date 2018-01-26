@@ -421,9 +421,6 @@ h1 {
 button {
   background-color: #272635;
   color: white;
-  /*font-size: 20px;
-  font-weight: bold;*/
-
 }
 
 .addButton {
@@ -461,7 +458,6 @@ footer {
   justify-content: flex-start;
   margin-top: 10px;
   margin-left: 10px;
-
 }
 /* new chortle */
 
@@ -472,13 +468,11 @@ footer {
   margin-top: 60px;
   margin-left: 5px;
   margin-right: 5px;
-
 }
 
 .placeholder-img {
   display: flex;
   justify-content: center;
-
 }
 
 .PEDbuttons {
@@ -486,14 +480,12 @@ footer {
   align-items: center;
   justify-content: space-between;
   justify-content: space-around;
-
 }
 
 .newform {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-
 }
 
 #addButton {
@@ -525,13 +517,11 @@ footer {
   }
 }
 
-
 @media (min-width: 400px) {
   #map {
     height: 375px;
     width: 375px;
   }
-
   .newChortleContainer {
     display: flex;
     flex-direction: column;
@@ -539,7 +529,6 @@ footer {
     margin-top: 20px;
     margin-left: 50px;
     margin-right: 50px;
-
   }
 }
 
@@ -548,7 +537,6 @@ footer {
     height: 475px;
     width: 575px;
   }
-
   .newChortleContainer {
     display: flex;
     flex-direction: column;
@@ -556,17 +544,14 @@ footer {
     margin-top: 20px;
     margin-left: 100px;
     margin-right: 100px;
-
   }
 }
-
 
 @media (min-width: 800px) {
   #map {
     height: 500px;
     width: 750px;
   }
-
   .newChortleContainer {
     display: flex;
     flex-direction: column;
@@ -574,7 +559,6 @@ footer {
     margin-top: 20px;
     margin-left: 200px;
     margin-right: 200px;
-
   }
 }
 
@@ -583,7 +567,6 @@ footer {
     height: 500px;
     width: 950px;
   }
-
   .newChortleContainer {
     display: flex;
     flex-direction: column;
@@ -591,6 +574,5 @@ footer {
     margin-top: 20px;
     margin-left: 300px;
     margin-right: 300px;
-
   }
 }

@@ -6,8 +6,7 @@
 
       controller: function() {
         const vm = this
-        console.log('menu working')
-    },
+      },
     templateUrl:'container/menu/menu.html'
-  })
+    })
 }());

@@ -2,21 +2,16 @@
   <div class="placeholder-img">
     <iframe src='https://giphy.com/embed/IeskeDwHI8Z1K' width='314' height='480' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/loop-portal-pl-IeskeDwHI8Z1K'></a></p>
   </div>
-
   <form class="newform" action="index.html" method="post">
-    <!-- <label for="username">Name</label>
-    <input ng-model="username" type="text" name="" value=""> -->
     <label for="comment"> Add Chortle Comment</label>
     <input ng-model="comment" type="text" class="chortle-form" name="" value="">
     <label for="file">Choose an image to upload</label>
     <input fileread="$ctrl.file" class="input" id="capture" type="file" accept="image/*;capture=camera">
   </form>
-
   <div class="PEDbuttons">
     <button type="button" name="button"
     ng-click="$ctrl.sendinfo($ctrl.newentries, comment, $ctrl.file, username, $ctrl.formview)"
-    >Post</button>
-    <!-- <button type="button" name="button">Edit</button> -->
-    <!-- <button type="button" name="button">Trash</button> -->
+    >Post
+    </button>
   </div>
 </div>

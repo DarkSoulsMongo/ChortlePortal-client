@@ -7,9 +7,9 @@
   <div class="username-row">
     <h6>&nbsp;&nbsp;&nbsp;testy123&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="./index.html" style='color:black;'>Logout</a></h6>
   </div>
-    <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
-      <div class="row">
-        <div class="twelve columns">
+  <div ng-show = "$ctrl.defaultvalue.view" class="userMap">
+    <div class="row">
+      <div class="twelve columns">
         <style>
           .mapboxgl-popup {
             max-width: 400px;
@@ -17,19 +17,19 @@
             color: black;
           }
         </style>
-        <div id='map'></div>
+        <div id='map'/>
         <script>
-        $(document).ready(function(){
-          document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
-        })
-        //arrays will hold results of individual properties of all chortles in http get.
-        let images = [];
-        let usernames = [];
-        let comments = [];
-        let latitudes = [];
-        let longitudes = [];
+          $(document).ready(function(){
+            document.querySelector("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div:nth-child(2) > button").click();
+          })
 
-        let geoJsonArray = [];
+          //arrays will hold results of individual properties of all chortles in http get.
+          let images = [];
+          let usernames = [];
+          let comments = [];
+          let latitudes = [];
+          let longitudes = [];
+          let geoJsonArray = [];
 
           $.get('https://salty-mountain-21631.herokuapp.com/', function(data){
             for(let i = 0; i < data.length; i++){
@@ -40,23 +40,25 @@
                 latitudes.push(data[i].latitude);
             }
             for(let i = 0; i < latitudes.length; i++){
-                //push geojson features into array geoJsonArray
-                geoJsonArray.push(
-                  {
-                    "type": "Feature",
-                    "properties": {
-                      "description": "<a href='" + images[i] + "'><img class='poupImage' src='" + images[i] + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i] + "</br><input type='button' value='Edit'></button>" + "<input type='button' value='Delete'></button></br>",
-                      "icon": "star",
-                    },
-                    "geometry": {
-                      "type": "Point",
-                      "coordinates": [longitudes[i], latitudes[i]]
-                    }
+              //push geojson features into array geoJsonArray
+              geoJsonArray.push(
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<a href='" + images[i] + "'><img class='poupImage' src='" + images[i] + "' height='200' width='200' alt='chortle image'/></a></br></br>" + comments[i] + "</br><input type='button' value='Edit'></button>" + "<input type='button' value='Delete'></button></br>",
+                    "icon": "star",
                   },
-                )
-              }
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [longitudes[i], latitudes[i]]
+                  }
+                },
+              )
+            }
           })
+
           mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
+
           var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/mapbox/dark-v9',
@@ -64,77 +66,63 @@
             zoom: 14 // starting zoom
           });
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvcnRsZS1wb3J0bGUyMDE3IiwiYSI6ImNqN3BsNWtodjI4OTgycXQ2ZzNrNjF1bHcifQ.L8t4SK3BNUhZ7Tjo6iPo5w';
-        var map = new mapboxgl.Map({
-          container: 'map', // container id
-          style: 'mapbox://styles/mapbox/dark-v9',
-          center: [-105.0072288, 39.7577643], // starting position -104.99, 39.73
-          zoom: 14 // starting zoom
-        });
-
           // Add zoom and rotation controls to the map.
-  map.addControl(new mapboxgl.NavigationControl());
-
-  map.addControl(new mapboxgl.GeolocateControl({
-  positionOptions: {
-      enableHighAccuracy: true
-  },
-  trackUserLocation: true
-  }));
-
-  map.on('load', function () {
-      map.addLayer({
-        "id": "places",
-        "type": "symbol",
-        "source": {
-            "type": "geojson",
-            "data": {
-                "type": "FeatureCollection",
-                "features": geoJsonArray
-              }
+          map.addControl(new mapboxgl.NavigationControl());
+          map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
             },
-            "layout": {
-              "icon-image": "{icon}-15",
-              "icon-allow-overlap": true
-            }
-        })
-
-        // When a click event occurs on a feature in the places layer, open a popup at the
-        // location of the feature, with description HTML from its properties.
-          map.on('click', 'places', function (e) {
+            trackUserLocation: true
+          }));
+          map.on('load', function () {
+            map.addLayer({
+              "id": "places",
+              "type": "symbol",
+              "source": {
+                "type": "geojson",
+                "data": {
+                  "type": "FeatureCollection",
+                  "features": geoJsonArray
+                }
+              },
+              "layout": {
+                "icon-image": "{icon}-15",
+                "icon-allow-overlap": true
+              }
+            })
+            // When a click event occurs on a feature in the places layer, open a popup at the
+            // location of the feature, with description HTML from its properties.
+            map.on('click', 'places', function (e) {
               new mapboxgl.Popup({closeOnClick: true})
-                  .setLngLat(e.features[0].geometry.coordinates)
-                  .setHTML(e.features[0].properties.description)
-                  .addTo(map);
-          });
-        // Change the cursor to a pointer when the mouse is over the places layer.
-          map.on('mouseenter', 'places', function () {
+              .setLngLat(e.features[0].geometry.coordinates)
+              .setHTML(e.features[0].properties.description)
+              .addTo(map);
+            });
+            // Change the cursor to a pointer when the mouse is over the places layer.
+            map.on('mouseenter', 'places', function () {
               map.getCanvas().style.cursor = 'pointer';
             });
-        // Change it back to a pointer when it leaves.
-          map.on('mouseleave', 'places', function () {
-            map.getCanvas().style.cursor = '';
-
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'places', function () {
+              map.getCanvas().style.cursor = '';
+            });
           });
-      });
-  </script>
-  </div>
-  </div>
+        </script>
+      </div>
+    </div>
   </div>
   <newchortle
     newentries = "$ctrl.chortles"
     sendinfo = "$ctrl.senddata"
     formview = "$ctrl.defaultvalue"
     ng-hide = "$ctrl.defaultvalue.view"
-  ></newchortle>
-
+  />
   <div class="addButton">
     <button class="addButton" type="button" name="button"
-      ng-click = "$ctrl.toggleform($ctrl.defaultvalue)">+
+      ng-click = "$ctrl.toggleform($ctrl.defaultvalue)"
+    >+
     </button>
   </div>
-
-
   <currentchortle
     entries = "$ctrl.chortles"
-  ></currentchortle>
+  />

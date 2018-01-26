@@ -8,9 +8,7 @@
       },
       controller: function() {
         const vm = this
-    },
+      },
     templateUrl:'container/currentchortle/currentchortle.html'
-  })
+    })
 }());
-
-//append image: id to base url to receive img
